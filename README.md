@@ -1,0 +1,2 @@
+# LogArquivoAdapter
+ 

@@ -1,0 +1,6 @@
+com\mycompany\model\Log.class
+com\mycompany\servive\LogService.class
+com\mycompany\adaptador\LogAdapter.class
+com\mycompany\adaptador\LogCSVAdapter.class
+com\mycompany\adaptador\LogJSONAdapter.class
+com\mycompany\LogArquivoAdapter.class

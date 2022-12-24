@@ -15,7 +15,7 @@ public class Log {
    private String mensagem;
    private String operacao;
    private String nomeContato;
-   private LocalDateTime dataHora;
+   private String dataHora;
    private static DateTimeFormatter formatoDataHora;
    private String nomeUsuario;
 
@@ -23,7 +23,7 @@ public class Log {
         this.mensagem = mensagem;
         this.operacao = operacao;
         this.nomeContato = nomecontato;
-        this.dataHora = dataHora;
+        this.dataHora = dataHora.format(formatoDataHora);
         this.nomeUsuario = nomeUsuario;
     }
    
@@ -53,7 +53,7 @@ public class Log {
         return nomeContato;
     }
 
-    public LocalDateTime getDataHora() {
+    public String getDataHora() {
         return dataHora;
     }
 

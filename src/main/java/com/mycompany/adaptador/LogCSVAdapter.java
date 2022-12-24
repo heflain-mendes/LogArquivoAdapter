@@ -45,7 +45,7 @@ public class LogCSVAdapter extends LogAdapter {
                         log[i].getMensagem(),
                         log[i].getOperacao(),
                         log[i].getNomecontato(),
-                        Log.getFormatoDataHora().format(log[i].getDataHora()),
+                        log[i].getDataHora(),
                         log[i].getNomeUsuario()
                     };
                     w.writeNext(dados);

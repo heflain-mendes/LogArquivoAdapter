@@ -7,6 +7,7 @@ package com.mycompany.adaptador;
 import com.mycompany.model.Log;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Reader;
@@ -21,8 +22,8 @@ import java.util.List;
  */
 public class LogCSVAdapter extends LogAdapter {
 
-    public LogCSVAdapter(String caminhoArquivo) {
-        super(caminhoArquivo);
+    public LogCSVAdapter(File file) {
+        super(file);
     }
 
     @Override

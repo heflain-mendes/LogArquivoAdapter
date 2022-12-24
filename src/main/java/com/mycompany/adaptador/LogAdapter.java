@@ -16,11 +16,11 @@ import java.util.List;
 public abstract class LogAdapter {
     protected File file;
 
-    public LogAdapter(String caminhoArquivo) {
-        if(caminhoArquivo == null){
-            throw new NullPointerException("caminhoArquivo não pode ser null");
+    public LogAdapter(File file) {
+        if(file == null){
+            throw new NullPointerException("file não pode ser null");
         }
-        this.file = new File(caminhoArquivo);
+        this.file = file;
     }
 
     public abstract void escrever(Log... log) throws IOException;

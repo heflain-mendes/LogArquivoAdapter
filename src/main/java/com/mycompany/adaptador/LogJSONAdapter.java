@@ -7,6 +7,7 @@ package com.mycompany.adaptador;
 import com.google.gson.Gson;
 import com.mycompany.model.Log;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -20,8 +21,8 @@ import java.util.List;
  */
 public class LogJSONAdapter extends LogAdapter {
 
-    public LogJSONAdapter(String caminhoArquivo) {
-        super(caminhoArquivo);
+    public LogJSONAdapter(File file) {
+        super(file);
     }
 
     @Override

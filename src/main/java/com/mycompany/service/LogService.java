@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.servive;
+package com.mycompany.service;
 
 import com.mycompany.adaptador.LogAdapter;
 import com.mycompany.model.Log;
@@ -13,17 +13,10 @@ import java.io.IOException;
  * @author heflain
  */
 public class LogService {
-
     private static LogAdapter logAdapter;
-
-    public static void escrever(Log... log) throws IOException, NullPointerException {
-        try {
-            logAdapter.escrever(log);
-        } catch (NullPointerException e) {
-            throw new NullPointerException(
-                    "instancia de log adapter ainda não foi configurada"
-            );
-        }
+    
+    public static LogAdapter getLogAdapter(){
+        return logAdapter;
     }
 
     public static void setLogAdapter(LogAdapter logAdapter) throws IOException {

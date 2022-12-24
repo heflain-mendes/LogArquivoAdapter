@@ -5,12 +5,7 @@
 
 package com.mycompany;
 
-import com.mycompany.adaptador.LogCSVAdapter;
-import com.mycompany.adaptador.LogJSONAdapter;
-import com.mycompany.model.Log;
-import com.mycompany.servive.LogService;
 import java.io.IOException;
-import java.time.LocalDateTime;
 
 /**
  *
@@ -19,11 +14,5 @@ import java.time.LocalDateTime;
 public class LogArquivoAdapter {
 
     public static void main(String[] args) throws ClassNotFoundException, IOException {
-        LogService.setLogAdapter(new LogCSVAdapter("teste.csv"));
-        Log l = new Log("funciona", "teste", "abel", LocalDateTime.now(), "Heflain");
-        LogService.escrever(l);
-        LogService.setLogAdapter(new LogJSONAdapter("teste.json"));
-        LogService.escrever(l);
-        LogService.setLogAdapter(new LogCSVAdapter("teste.csv"));
     }
 }

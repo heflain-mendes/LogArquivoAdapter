@@ -93,4 +93,9 @@ public class LogCSVAdapter extends LogAdapter {
 
         return listLog;
     }
+
+    @Override
+    public String toString() {
+        return "CSV";
+    }   
 }

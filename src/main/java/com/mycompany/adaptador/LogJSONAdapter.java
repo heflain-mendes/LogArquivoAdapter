@@ -42,29 +42,34 @@ public class LogJSONAdapter extends LogAdapter {
     @Override
     public List<Log> exportaTodos() throws IOException {
         List<Log> listLog = new ArrayList<>();
-        
+
         try (BufferedReader br = new BufferedReader(new FileReader(file))) {
             Gson gson = new Gson();
             String linha = "";
             while (true) {
                 linha = br.readLine();
-                
+
                 if (linha != null) {
-                   listLog.add(gson.fromJson(linha, Log.class));
+                    listLog.add(gson.fromJson(linha, Log.class));
                 } else {
                     break;
                 }
             }
-            
+
         } catch (IOException ex) {
             System.out.println(ex.getMessage());
             throw new IOException(
                     "Falha ao abrir o arquivo: " + file.getAbsoluteFile()
             );
-        }finally{
+        } finally {
             Files.delete(file.toPath());
         }
-        
+
         return listLog;
+    }
+
+    @Override
+    public String toString() {
+        return "JSON";
     }
 }

@@ -32,7 +32,7 @@ public class LogJSONAdapter extends LogAdapter {
                 Gson gson = new Gson();
                 for (int i = 0; i < log.length; i++) {
                     String json = gson.toJson(log[i]).replaceAll("\n", " ");
-                    fw.write(json);
+                    fw.write(json + "\n");
                 }
             } catch (IOException ex) {
                 throw new IOException(

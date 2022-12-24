@@ -12,12 +12,13 @@ import java.time.format.DateTimeFormatter;
  * @author heflain
  */
 public class Log {
-   private String mensagem;
-   private String operacao;
-   private String nomeContato;
-   private String dataHora;
-   private static DateTimeFormatter formatoDataHora;
-   private String nomeUsuario;
+    private static DateTimeFormatter formatoDataHora = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
+    private String mensagem;
+    private String operacao;
+    private String nomeContato;
+    private String dataHora;
+    private String nomeUsuario;
 
     public Log(String mensagem, String operacao, String nomecontato, LocalDateTime dataHora, String nomeUsuario) {
         this.mensagem = mensagem;
@@ -26,20 +27,16 @@ public class Log {
         this.dataHora = dataHora.format(formatoDataHora);
         this.nomeUsuario = nomeUsuario;
     }
-   
-   public static void setFormatoEscritaDataHora( DateTimeFormatter formatoDataHora){
-       if(formatoDataHora != null){
-           Log.formatoDataHora = formatoDataHora;
-       }
-   }
-   
-   public static DateTimeFormatter getFormatoDataHora(){
-       if(formatoDataHora != null){
-           return formatoDataHora;
-       }
-       
-       return DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-   }
+
+    public static void setFormatoEscritaDataHora(DateTimeFormatter formatoDataHora) {
+        if (formatoDataHora != null) {
+            Log.formatoDataHora = formatoDataHora;
+        }
+    }
+
+    public static DateTimeFormatter getFormatoDataHora() {
+        return formatoDataHora;
+    }
 
     public String getMensagem() {
         return mensagem;

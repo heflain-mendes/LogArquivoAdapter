@@ -27,16 +27,18 @@ public class LogJSONAdapter extends LogAdapter {
 
     @Override
     public void escrever(Log... log) throws IOException {
-        try (FileWriter fw = new FileWriter(file)) {
-            Gson gson = new Gson();
-            for (int i = 0; i < log.length; i++) {
-                String json = gson.toJson(log[i]).replaceAll("\n", " ");
-                fw.write(json);
+        if(log.length > 0) {
+            try (FileWriter fw = new FileWriter(file, true)) {
+                Gson gson = new Gson();
+                for (int i = 0; i < log.length; i++) {
+                    String json = gson.toJson(log[i]).replaceAll("\n", " ");
+                    fw.write(json);
+                }
+            } catch (IOException ex) {
+                throw new IOException(
+                        "Falha ao abrir o arquivo: " + file.getAbsoluteFile()
+                );
             }
-        } catch (IOException ex) {
-            throw new IOException(
-                    "Falha ao abrir o arquivo: " + file.getAbsoluteFile()
-            );
         }
     }
 

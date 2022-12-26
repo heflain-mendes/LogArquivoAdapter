@@ -14,14 +14,12 @@ import java.time.format.DateTimeFormatter;
 public class Log {
     private static DateTimeFormatter formatoDataHora = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
 
-    private String mensagem;
     private String operacao;
     private String nomeContato;
     private String dataHora;
     private String nomeUsuario;
 
-    public Log(String mensagem, String operacao, String nomecontato, LocalDateTime dataHora, String nomeUsuario) {
-        this.mensagem = mensagem;
+    public Log(String operacao, String nomecontato, LocalDateTime dataHora, String nomeUsuario) {
         this.operacao = operacao;
         this.nomeContato = nomecontato;
         this.dataHora = dataHora.format(formatoDataHora);
@@ -36,10 +34,6 @@ public class Log {
 
     public static DateTimeFormatter getFormatoDataHora() {
         return formatoDataHora;
-    }
-
-    public String getMensagem() {
-        return mensagem;
     }
 
     public String getOperacao() {

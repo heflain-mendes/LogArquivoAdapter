@@ -32,7 +32,6 @@ public class LogCSVAdapter extends LogAdapter {
             try (CSVWriter w = new CSVWriter(new FileWriter(file, true))) {
                 if (file.length() == 0) {
                     String[] header = {
-                        "mensagem",
                         "operacao",
                         "nomecontato",
                         "dataHora",
@@ -42,7 +41,6 @@ public class LogCSVAdapter extends LogAdapter {
                 }
                 for (int i = 0; i < log.length; i++) {
                     String[] dados = {
-                        log[i].getMensagem(),
                         log[i].getOperacao(),
                         log[i].getNomecontato(),
                         log[i].getDataHora(),
@@ -73,11 +71,10 @@ public class LogCSVAdapter extends LogAdapter {
                             new Log(
                                     line[0],
                                     line[1],
-                                    line[2],
                                     LocalDateTime.parse(
-                                            line[3],
+                                            line[2],
                                             Log.getFormatoDataHora()),
-                                    line[4]
+                                    line[3]
                             )
                     );
                 }
